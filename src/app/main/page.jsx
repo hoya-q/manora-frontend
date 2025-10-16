@@ -140,9 +140,9 @@ export default function MainPage() {
       // SSR 중에는 영어 폴백 반환
       const fallbacks = {
         hitPlayOnLife: "Your go-to AI audio assistant",
-        hitPlayOnLifePart1: "Your go-to",
+        hitPlayOnLifePart1: "Your go-to ",
         hitPlayOnLifePart2: "AI audio",
-        hitPlayOnLifePart3: "assistant",
+        hitPlayOnLifePart3: " assistant",
         heroDescription:
           "Manora condenses the clutter—lectures, photos, documents, and more—into a simple, personalized audio brief, ready when you are.",
         downloadAppStore: "Download on the App Store",
@@ -285,7 +285,7 @@ export default function MainPage() {
                   {translate("hitPlayOnLifePart1")}
                   <span className="text-[#667eea]">
                     {translate("hitPlayOnLifePart2")}
-                  </span>{" "}
+                  </span>
                   {translate("hitPlayOnLifePart3")}
                 </p>
                 <span className="font-semibold">
