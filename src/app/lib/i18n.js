@@ -1,0 +1,236 @@
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
+
+// English translations
+const en = {
+  features: "Features",
+  demo: "Demo",
+  pricing: "Pricing",
+  getTheApp: "Get the app",
+  hitPlayOnLife: "Hit play on your life.",
+  heroDescription:
+    "Manora condenses the clutter into a simple, \npersonalized audio brief, ready when you are.",
+  downloadAppStore: "Download on the App Store",
+  getGooglePlay: "Get it on Google Play",
+  freeTrial: "14-day free trial included • Cancel anytime.",
+  productivityOnGo: "Productivity, on-the-go.",
+  maximizeMoments: "Maximize your in-between moments with 'Hey, Manora!'.",
+  smartFeatures: "Smart features that work while you move.",
+  audioNarration: "Audio narration",
+  audioNarrationDesc: "Listen to texts, emails, and notes at your own pace.",
+  autoSummaries: "Auto-summaries",
+  autoSummariesDesc:
+    "Get concise summaries of your daily texts, emails, and recordings in seconds.",
+  voiceNavigation: "Voice-triggered navigation",
+  voiceNavigationDesc:
+    "Control the app and access content hands-free, anytime.",
+  playFormats: "Play as podcasts, lectures, and quizzes",
+  playFormatsDesc:
+    "Experience your content in different formats tailored to your learning style and preferences.",
+  podcast: "Podcast",
+  conversationFormat: "Conversational format",
+  conversation: "Conversation",
+  interactiveDialogue: "Interactive dialogue",
+  lecture: "Lecture",
+  educationalFormat: "Educational format",
+  quiz: "Quiz",
+  interactiveQA: "Interactive Q&A",
+  flashcards: "Flashcards",
+  memoryTraining: "Memory training",
+  pricing: "Pricing",
+  choosePlan:
+    "Choose the plan that fits. Most people land on Essentials — it's the sweet spot.",
+  basic: "Basic",
+  basicDesc: "The bare minimum to get started.",
+  free: "Free",
+  limitedListens: "Limited listens",
+  basicSummaries: "Basic summaries",
+  manualVoice: "Manual voice commands",
+  getBasic: "Get Basic",
+  essentials: "Essentials",
+  mostPopular: "Most Popular",
+  essentialsDesc: "Biggest jump in value — recommended for most.",
+  unlimitedBriefs: "Unlimited audio briefs",
+  prioritySummaries: "Priority auto-summaries",
+  heyManora: '"Hey, Manora" voice trigger',
+  crossDeviceSync: "Cross-device sync",
+  startEssentials: "Start Essentials",
+  afterTrial:
+    "After 14-day trial, you'll roll into Essentials unless you choose otherwise.",
+  premium: "Premium",
+  premiumDesc: "For power users who want everything.",
+  allEssentialsFeatures: "All Essentials features",
+  advancedAnalytics: "Advanced analytics & exports",
+  prioritySupport: "Priority support & early features",
+  goPremium: "Go Premium",
+  readyToStart: "Ready to get started?",
+  downloadToday: "Download Manora today and transform how you consume content.",
+  privacyTerms: "Privacy & Terms",
+  support: "Support",
+  aboutUs: "About Us",
+};
+
+// Korean translations
+const ko = {
+  features: "기능",
+  demo: "데모",
+  pricing: "요금제",
+  getTheApp: "앱 다운로드",
+  hitPlayOnLife: "당신의 삶을 재생하세요.",
+  heroDescription:
+    "Manora는 강의, 사진, 문서 등의 복잡한 내용을 간단하고 개인화된 오디오 브리핑으로 압축하여 언제든 준비된 상태로 제공합니다.",
+  downloadAppStore: "App Store에서 다운로드",
+  getGooglePlay: "Google Play에서 받기",
+  freeTrial: "14일 무료 체험 포함 • 언제든 취소 가능",
+  productivityOnGo: "이동 중에도 생산성을.",
+  maximizeMoments: "'헤이, 마노라!'로 짬짬이 시간을 최대한 활용하세요.",
+  smartFeatures: "움직이는 중에도 작동하는 스마트 기능.",
+  audioNarration: "오디오 내레이션",
+  audioNarrationDesc: "텍스트, 이메일, 메모를 본인만의 속도로 들어보세요.",
+  autoSummaries: "자동 요약",
+  autoSummariesDesc:
+    "일일 텍스트, 이메일, 녹음의 간결한 요약을 몇 초 만에 받아보세요.",
+  voiceNavigation: "음성 트리거 내비게이션",
+  voiceNavigationDesc: "언제든 핸즈프리로 앱을 제어하고 콘텐츠에 액세스하세요.",
+  playFormats: "팟캐스트, 강의, 퀴즈로 재생",
+  playFormatsDesc:
+    "학습 스타일과 선호도에 맞춰진 다양한 형식으로 콘텐츠를 경험하세요.",
+  podcast: "팟캐스트",
+  conversationFormat: "대화 형식",
+  conversation: "대화",
+  interactiveDialogue: "대화형 대화",
+  lecture: "강의",
+  educationalFormat: "교육 형식",
+  quiz: "퀴즈",
+  interactiveQA: "대화형 Q&A",
+  flashcards: "플래시카드",
+  memoryTraining: "기억력 훈련",
+  pricingPlan: "요금제",
+  choosePlan:
+    "맞는 요금제를 선택하세요. 대부분의 사람들이 에센셜을 선택합니다 — 가장 적절한 선택입니다.",
+  basic: "베이직",
+  basicDesc: "시작하기 위한 최소한의 기능.",
+  free: "무료",
+  limitedListens: "제한된 청취",
+  basicSummaries: "기본 요약",
+  manualVoice: "수동 음성 명령",
+  getBasic: "베이직 시작하기",
+  essentials: "에센셜",
+  mostPopular: "가장 인기",
+  essentialsDesc: "가장 큰 가치 향상 — 대부분에게 추천.",
+  unlimitedBriefs: "무제한 오디오 브리핑",
+  prioritySummaries: "우선 자동 요약",
+  heyManora: '"헤이, 마노라" 음성 트리거',
+  crossDeviceSync: "기기 간 동기화",
+  startEssentials: "에센셜 시작하기",
+  afterTrial: "14일 체험 후, 다른 선택이 없으면 에센셜로 자동 전환됩니다.",
+  premium: "프리미엄",
+  premiumDesc: "모든 것을 원하는 파워 유저를 위한 플랜.",
+  allEssentialsFeatures: "모든 에센셜 기능",
+  advancedAnalytics: "고급 분석 & 내보내기",
+  prioritySupport: "우선 지원 & 조기 기능 액세스",
+  goPremium: "프리미엄 시작하기",
+  readyToStart: "시작할 준비가 되셨나요?",
+  downloadToday: "오늘 Manora를 다운로드하고 콘텐츠 소비 방식을 혁신하세요.",
+  privacyTerms: "개인정보처리방침",
+  support: "고객지원",
+  aboutUs: "회사 소개",
+};
+
+// Japanese translations
+const jp = {
+  features: "機能",
+  demo: "デモ",
+  pricing: "料金プラン",
+  getTheApp: "アプリをダウンロード",
+  hitPlayOnLife: "あなたの人生を再生しましょう。",
+  heroDescription:
+    "Manoraは講義、写真、文書などの複雑なコンテンツを、シンプルでパーソナライズされたオーディオブリーフィングに圧縮し、いつでも準備完了状態で提供します。",
+  downloadAppStore: "App Storeでダウンロード",
+  getGooglePlay: "Google Playで入手",
+  freeTrial: "14日間無料トライアル付き • いつでもキャンセル可能",
+  productivityOnGo: "移動中でも生産性を。",
+  maximizeMoments: "「ヘイ、マノラ！」でスキマ時間を最大限活用しましょう。",
+  smartFeatures: "移動中でも機能するスマート機能。",
+  audioNarration: "オーディオナレーション",
+  audioNarrationDesc:
+    "テキスト、メール、メモを自分のペースで聞くことができます。",
+  autoSummaries: "自動要約",
+  autoSummariesDesc:
+    "日々のテキスト、メール、録音の簡潔な要約を数秒で取得できます。",
+  voiceNavigation: "音声トリガーナビゲーション",
+  voiceNavigationDesc:
+    "いつでもハンズフリーでアプリを制御し、コンテンツにアクセスできます。",
+  playFormats: "ポッドキャスト、講義、クイズとして再生",
+  playFormatsDesc:
+    "学習スタイルと好みに合わせた様々な形式でコンテンツを体験できます。",
+  podcast: "ポッドキャスト",
+  conversationFormat: "会話形式",
+  conversation: "会話",
+  interactiveDialogue: "対話型会話",
+  lecture: "講義",
+  educationalFormat: "教育形式",
+  quiz: "クイズ",
+  interactiveQA: "対話型Q&A",
+  flashcards: "フラッシュカード",
+  memoryTraining: "記憶力訓練",
+  pricingPlan: "料金プラン",
+  choosePlan:
+    "適切なプランを選択してください。ほとんどの人がエッセンシャルを選択します — 最適な選択です。",
+  basic: "ベーシック",
+  basicDesc: "始めるための最小限の機能。",
+  free: "無料",
+  limitedListens: "限定リスニング",
+  basicSummaries: "基本要約",
+  manualVoice: "手動音声コマンド",
+  getBasic: "ベーシックを開始",
+  essentials: "エッセンシャル",
+  mostPopular: "最も人気",
+  essentialsDesc: "最大の価値向上 — ほとんどの人に推奨。",
+  unlimitedBriefs: "無制限オーディオブリーフィング",
+  prioritySummaries: "優先自動要約",
+  heyManora: "「ヘイ、マノラ」音声トリガー",
+  crossDeviceSync: "デバイス間同期",
+  startEssentials: "エッセンシャルを開始",
+  afterTrial:
+    "14日間トライアル後、他の選択がない場合はエッセンシャルに自動転換されます。",
+  premium: "プレミアム",
+  premiumDesc: "すべてを求めるパワーユーザー向けプラン。",
+  allEssentialsFeatures: "すべてのエッセンシャル機能",
+  advancedAnalytics: "高度な分析とエクスポート",
+  prioritySupport: "優先サポートと早期機能アクセス",
+  goPremium: "プレミアムを開始",
+  readyToStart: "始める準備はできましたか？",
+  downloadToday:
+    "今すぐManoraをダウンロードして、コンテンツの消費方法を変革しましょう。",
+  privacyTerms: "プライバシーと利用規約",
+  support: "サポート",
+  aboutUs: "会社概要",
+};
+
+// Initialize i18n with fallback values
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources: {
+      en: { translation: en },
+      ko: { translation: ko },
+      jp: { translation: jp },
+    },
+    fallbackLng: "en",
+    debug: false,
+    interpolation: {
+      escapeValue: false,
+    },
+    detection: {
+      order: ["localStorage", "navigator", "htmlTag"],
+      caches: ["localStorage"],
+    },
+    react: {
+      useSuspense: false,
+    },
+  });
+
+export default i18n;
