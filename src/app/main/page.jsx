@@ -219,7 +219,7 @@ export default function MainPage() {
             <div className="relative">
               <div className="aspect-[9/16] max-w-sm mx-auto rounded-3xl overflow-hidden">
                 <Image
-                  src="https://readdy.ai/api/search-image?query=Modern%20mobile%20app%20interface%20mockup%20showing%20audio%20content%20management%20app%20with%20dark%20theme%2C%20purple%20and%20blue%20gradient%20accents%2C%20clean%20minimalist%20design%2C%20home%20screen%20with%20circular%20recording%20button%2C%20waveform%20visualization%2C%20toggle%20switches%2C%20chat%20interface%2C%20recent%20items%20list%2C%20bottom%20navigation%20bar%20with%20icons%2C%20professional%20UI%20design%20for%20productivity%20app&width=400&height=700&seq=manora-mobile-demo&orientation=portrait"
+                  src="/images/main-img.jpg"
                   alt="Manora Mobile App Demo"
                   width={400}
                   height={700}
