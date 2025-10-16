@@ -9,9 +9,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: { max: "767px" }, // 모바일 전용
+        md: { min: "768px", max: "1279px" }, // 태블릿 전용
+        lg: "1280px", // 웹 전용
+        mobile: { max: "1279px" }, // 모바일, 태블릿 공용
+      },
       fontFamily: {
         sans: [
-          "Pretendard",
+          "Inter",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",

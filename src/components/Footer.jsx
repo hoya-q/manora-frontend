@@ -3,10 +3,12 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
+import { useGetWindowSize } from "../hooks/useGetWindowSize";
 
 export function Footer() {
   const router = useRouter();
   const { t } = useTranslation();
+  const { screen } = useGetWindowSize();
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -42,8 +44,16 @@ export function Footer() {
 
   return (
     <footer className="border-t border-white/10 py-8">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+      <div
+        className={`max-w-6xl mx-auto ${
+          screen === "MOBILE" ? "px-4" : screen === "TABLET" ? "px-6" : "px-6"
+        }`}
+      >
+        <div
+          className={`flex justify-between items-center ${
+            screen === "MOBILE" ? "flex-col space-y-4" : "flex-row"
+          }`}
+        >
           <p className="text-white/60">© ArtygenSpace. All rights reserved.</p>
           <div className="flex space-x-6">
             <button

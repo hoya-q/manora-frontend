@@ -4,9 +4,11 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import Features from "@/src/components/Features";
+import { useGetWindowSize } from "@/src/hooks/useGetWindowSize";
 
 export default function MainPage() {
   const { t, i18n } = useTranslation();
+  const { screen, isClient } = useGetWindowSize();
   const [isRecording, setIsRecording] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,6 +20,72 @@ export default function MainPage() {
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  // 화면 크기에 따른 동적 클래스 생성
+  const getResponsiveClasses = () => {
+    if (!isClient) {
+      // SSR 중에는 기본 클래스 반환
+      return {
+        sectionPadding: "py-8 md:py-16 lg:py-20",
+        titleSize: "text-3xl sm:text-4xl md:text-5xl lg:text-7xl",
+        descriptionSize: "text-base sm:text-lg md:text-xl",
+        badgeSize: "h-12 sm:h-14 md:h-16",
+        badgePadding: "p-2 sm:p-3 md:p-4",
+        containerPadding: "px-4 sm:px-6",
+        gridCols: "grid-cols-1 lg:grid-cols-2",
+        textAlign: "text-center lg:text-left",
+      };
+    }
+
+    switch (screen) {
+      case "MOBILE":
+        return {
+          sectionPadding: "py-8",
+          titleSize: "text-3xl",
+          descriptionSize: "text-base",
+          badgeSize: "h-12",
+          badgePadding: "p-2",
+          containerPadding: "px-4",
+          gridCols: "grid-cols-1",
+          textAlign: "text-center",
+        };
+      case "TABLET":
+        return {
+          sectionPadding: "py-12",
+          titleSize: "text-4xl",
+          descriptionSize: "text-lg",
+          badgeSize: "h-14",
+          badgePadding: "p-3",
+          containerPadding: "px-6",
+          gridCols: "grid-cols-1",
+          textAlign: "text-center",
+        };
+      case "WEB":
+        return {
+          sectionPadding: "py-20",
+          titleSize: "text-7xl",
+          descriptionSize: "text-xl",
+          badgeSize: "h-16",
+          badgePadding: "p-4",
+          containerPadding: "px-6",
+          gridCols: "grid-cols-2",
+          textAlign: "text-left",
+        };
+      default:
+        return {
+          sectionPadding: "py-8 md:py-16 lg:py-20",
+          titleSize: "text-3xl sm:text-4xl md:text-5xl lg:text-7xl",
+          descriptionSize: "text-base sm:text-lg md:text-xl",
+          badgeSize: "h-12 sm:h-14 md:h-16",
+          badgePadding: "p-2 sm:p-3 md:p-4",
+          containerPadding: "px-4 sm:px-6",
+          gridCols: "grid-cols-1 lg:grid-cols-2",
+          textAlign: "text-center lg:text-left",
+        };
+    }
+  };
+
+  const responsiveClasses = getResponsiveClasses();
 
   // 슬라이드 컨테이너 ref 설정
   useEffect(() => {
@@ -72,6 +140,9 @@ export default function MainPage() {
       // SSR 중에는 영어 폴백 반환
       const fallbacks = {
         hitPlayOnLife: "Your go-to AI audio assistant",
+        hitPlayOnLifePart1: "Your go-to",
+        hitPlayOnLifePart2: "AI audio",
+        hitPlayOnLifePart3: "assistant",
         heroDescription:
           "Manora condenses the clutter—lectures, photos, documents, and more—into a simple, personalized audio brief, ready when you are.",
         downloadAppStore: "Download on the App Store",
@@ -190,26 +261,47 @@ export default function MainPage() {
       </div>
 
       {/* 메인 히어로 섹션 */}
-      <section className="relative lg:py-20 md:py-20 sm:py-8">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <section className={`relative ${responsiveClasses.sectionPadding}`}>
+        <div
+          className={`max-w-6xl mx-auto ${responsiveClasses.containerPadding}`}
+        >
+          <div
+            className={`grid ${responsiveClasses.gridCols} gap-8 items-center`}
+          >
             {/* 왼쪽 컬럼 - 텍스트 */}
-            <div className="text-left lg:order-1">
-              <p className="text-white/60 text-base sm:text-lg mb-4 tracking-wide">
-                {translate("hitPlayOnLife")}
-              </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tight gradient-text">
+            <div
+              className={`${responsiveClasses.textAlign} ${screen === "WEB" ? "order-1" : ""}`}
+            >
+              <h1
+                className={`${responsiveClasses.titleSize} font-bold mb-4 tracking-tight gradient-text`}
+              >
                 Manora
               </h1>
-              <p className="text-lg sm:text-xl text-white/80 mb-6 sm:mb-8 leading-relaxed whitespace-pre-line">
-                {translate("heroDescription")}
-              </p>
+
+              <div
+                className={`flex gap-6 flex-col ${responsiveClasses.descriptionSize} text-white/80 mb-6 leading-relaxed whitespace-pre-line`}
+              >
+                <p className="text-2xl font-bold">
+                  {translate("hitPlayOnLifePart1")}
+                  <span className="text-[#667eea]">
+                    {translate("hitPlayOnLifePart2")}
+                  </span>{" "}
+                  {translate("hitPlayOnLifePart3")}
+                </p>
+                <span className="font-semibold">
+                  {translate("heroDescription")}
+                </span>
+              </div>
 
               {/* 액션 버튼들 */}
-              <div className="flex flex-col sm:flex-row gap-6 mb-6">
+              <div
+                className={`flex ${screen === "MOBILE" ? "flex-col" : "flex-row"} gap-4 mb-6 ${screen === "WEB" ? "justify-start" : "justify-center"}`}
+              >
                 {/* App Store 배지 */}
                 <div className="flex justify-center">
-                  <button className="p-4 rounded-2xl font-medium transition-all hover:-translate-y-0.5 hover:scale-105 cursor-pointer flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10">
+                  <button
+                    className={`${responsiveClasses.badgePadding} rounded-2xl font-medium transition-all hover:-translate-y-0.5 hover:scale-105 cursor-pointer flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10`}
+                  >
                     <Image
                       src={
                         i18n.language === "ko"
@@ -219,15 +311,18 @@ export default function MainPage() {
                             : "/images/preorder/App_Store_Badge_US-UK_RGB_blk.svg"
                       }
                       alt={translate("downloadAppStore")}
-                      width={200}
-                      height={67}
+                      width={160}
+                      height={54}
+                      className={`${responsiveClasses.badgeSize} w-auto`}
                     />
                   </button>
                 </div>
 
                 {/* Google Play 배지 - 가이드라인에 따라 App Store와 같은 크기 */}
                 <div className="flex justify-center">
-                  <button className="p-4 rounded-2xl font-medium transition-all hover:-translate-y-0.5 hover:scale-105 cursor-pointer flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10">
+                  <button
+                    className={`${responsiveClasses.badgePadding} rounded-2xl font-medium transition-all hover:-translate-y-0.5 hover:scale-105 cursor-pointer flex items-center justify-center bg-white/5 backdrop-blur-sm border border-white/10`}
+                  >
                     <Image
                       src={
                         i18n.language === "ko"
@@ -237,8 +332,9 @@ export default function MainPage() {
                             : "/images/preorder/GooglePlay_Badge_Web_color_English.svg"
                       }
                       alt={translate("getGooglePlay")}
-                      width={200}
-                      height={67}
+                      width={160}
+                      height={54}
+                      className={`${responsiveClasses.badgeSize} w-auto`}
                     />
                   </button>
                 </div>
@@ -248,8 +344,18 @@ export default function MainPage() {
             </div>
 
             {/* 오른쪽 컬럼 - 모바일 앱 데모 */}
-            <div className="relative lg:order-2">
-              <div className="aspect-[9/16] max-w-xs sm:max-w-sm mx-auto rounded-3xl overflow-hidden">
+            <div
+              className={`relative ${screen === "WEB" ? "order-2" : ""} ${screen === "MOBILE" ? "mt-8" : "mt-0"}`}
+            >
+              <div
+                className={`aspect-[9/16] mx-auto rounded-2xl overflow-hidden ${
+                  screen === "MOBILE"
+                    ? "max-w-[280px]"
+                    : screen === "TABLET"
+                      ? "max-w-xs"
+                      : "max-w-sm rounded-3xl"
+                }`}
+              >
                 <Image
                   src="/images/main-img.jpg"
                   alt="Manora Mobile App Demo"

@@ -9,8 +9,12 @@ const en = {
   pricing: "Pricing",
   getTheApp: "Get the app",
   hitPlayOnLife: "Your go-to AI audio assistant",
+  hitPlayOnLifePart1: "Your go-to",
+  hitPlayOnLifePart2: "AI audio",
+  hitPlayOnLifePart3: "assistant",
+  Hitplayonyourlife: "Hit play on your life.",
   heroDescription:
-    "Hit play on your life. \nListen to a simple and personalized \n audio brief,ready when you are. \n For articles, lectures, emails, photos, and more.",
+    "Listen to a simple and personalized audio brief, ready when you are. For articles, lectures, emails, photos, and more.",
   downloadAppStore: "Download on the App Store",
   getGooglePlay: "Get it on Google Play",
   freeTrial: "14-day free trial included • Cancel anytime.",
@@ -27,7 +31,8 @@ const en = {
   voiceNavigationDesc:
     "Control the app and access content hands-free, anytime.",
   productivity: "Productivity On-the-go",
-  productivityDesc: 'Maximize your in-between moments with \n "Hey, Manora!"',
+  productivityDesc: "Maximize your in-between moments with ",
+  Manora: '"Hey, Manora!"',
   playFormats: "Play as podcasts, lectures, and quizzes",
   playFormatsDesc:
     "Experience your content in different formats tailored to your learning style and preferences.",
@@ -41,7 +46,6 @@ const en = {
   interactiveQA: "Interactive Q&A",
   flashcards: "Flashcards",
   memoryTraining: "Memory training",
-  pricing: "Pricing",
   choosePlan:
     "Choose the plan that fits. Most people land on Essentials — it's the sweet spot.",
   basic: "Basic",
@@ -81,8 +85,12 @@ const ko = {
   pricing: "요금제",
   getTheApp: "앱 다운로드",
   hitPlayOnLife: "당신의 삶을 재생하세요.",
+  hitPlayOnLifePart1: "당신만의",
+  hitPlayOnLifePart2: "AI 오디오",
+  hitPlayOnLifePart3: "어시스턴트",
+  Hitplayonyourlife: "당신의 삶을 재생하세요.",
   heroDescription:
-    "당신의 삶을 재생하세요. 간단하고 개인화된 오디오 브리핑을 언제든 들으실 수 있습니다. 기사, 강의, 이메일, 사진 등 다양한 용도로 활용하세요.",
+    "간단하고 개인화된 오디오 브리핑을 언제든 들으실 수 있습니다. 기사, 강의, 이메일, 사진 등 다양한 용도로 활용하세요.",
   downloadAppStore: "App Store에서 다운로드",
   getGooglePlay: "Google Play에서 받기",
   freeTrial: "14일 무료 체험 포함 • 언제든 취소 가능",
@@ -97,7 +105,8 @@ const ko = {
   voiceNavigation: "음성 트리거 내비게이션",
   voiceNavigationDesc: "언제든 핸즈프리로 앱을 제어하고 콘텐츠에 액세스하세요.",
   productivity: "이동 중 생산성",
-  productivityDesc: '짬짬이 시간을 최대한 활용하세요.\n"헤이, 마노라!"',
+  productivityDesc: "짬짬이 시간을 최대한 활용하세요.",
+  Manora: '"헤이, 마노라!"',
   playFormats: "팟캐스트, 강의, 퀴즈로 재생",
   playFormatsDesc:
     "학습 스타일과 선호도에 맞춰진 다양한 형식으로 콘텐츠를 경험하세요.",
@@ -111,7 +120,7 @@ const ko = {
   interactiveQA: "대화형 Q&A",
   flashcards: "플래시카드",
   memoryTraining: "기억력 훈련",
-  pricingPlan: "요금제",
+  pricing: "요금제",
   choosePlan:
     "맞는 요금제를 선택하세요. 대부분의 사람들이 에센셜을 선택합니다 — 가장 적절한 선택입니다.",
   basic: "베이직",
@@ -150,8 +159,12 @@ const jp = {
   pricing: "料金プラン",
   getTheApp: "アプリをダウンロード",
   hitPlayOnLife: "あなたの人生を再生しましょう。",
+  hitPlayOnLifePart1: "あなた専用の",
+  hitPlayOnLifePart2: "AIオーディオ",
+  hitPlayOnLifePart3: "アシスタント",
+  Hitplayonyourlife: "あなたの人生を再生しましょう。",
   heroDescription:
-    "Manoraは講義、写真、文書などの複雑なコンテンツを、シンプルでパーソナライズされたオーディオブリーフィングに圧縮し、いつでも準備完了状態で提供します。",
+    "シンプルでパーソナライズされたオーディオブリーフィングをいつでも聞くことができます。記事、講義、メール、写真など、様々な用途で活用できます。",
   downloadAppStore: "App Storeでダウンロード",
   getGooglePlay: "Google Playで入手",
   freeTrial: "14日間無料トライアル付き • いつでもキャンセル可能",
@@ -168,7 +181,8 @@ const jp = {
   voiceNavigationDesc:
     "いつでもハンズフリーでアプリを制御し、コンテンツにアクセスできます。",
   productivity: "移動中の生産性",
-  productivityDesc: "スキマ時間を最大限活用しましょう。\n「ヘイ、マノラ！」",
+  productivityDesc: "スキマ時間を最大限活用しましょう。",
+  Manora: '"「ヘイ、マノラ！」"',
   playFormats: "ポッドキャスト、講義、クイズとして再生",
   playFormatsDesc:
     "学習スタイルと好みに合わせた様々な形式でコンテンツを体験できます。",
@@ -182,7 +196,7 @@ const jp = {
   interactiveQA: "対話型Q&A",
   flashcards: "フラッシュカード",
   memoryTraining: "記憶力訓練",
-  pricingPlan: "料金プラン",
+  pricing: "料金プラン",
   choosePlan:
     "適切なプランを選択してください。ほとんどの人がエッセンシャルを選択します — 最適な選択です。",
   basic: "ベーシック",
