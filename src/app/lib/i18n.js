@@ -8,9 +8,9 @@ const en = {
   demo: "Demo",
   pricing: "Pricing",
   getTheApp: "Get the app",
-  hitPlayOnLife: "Hit play on your life.",
+  hitPlayOnLife: "Your go-to AI audio assistant",
   heroDescription:
-    "Manora condenses the clutter into a simple, \npersonalized audio brief, ready when you are.",
+    "Hit play on your life. \nListen to a simple and personalized \n audio brief,ready when you are. \n For articles, lectures, emails, photos, and more.",
   downloadAppStore: "Download on the App Store",
   getGooglePlay: "Get it on Google Play",
   freeTrial: "14-day free trial included • Cancel anytime.",
@@ -18,13 +18,16 @@ const en = {
   maximizeMoments: "Maximize your in-between moments with 'Hey, Manora!'.",
   smartFeatures: "Smart features that work while you move.",
   audioNarration: "Audio narration",
-  audioNarrationDesc: "Listen to texts, emails, and notes at your own pace.",
+  audioNarrationDesc:
+    "Listen to texts, emails, and notes at your own pace, \n provided to by Manora.",
   autoSummaries: "Auto-summaries",
   autoSummariesDesc:
     "Get concise summaries of your daily texts, emails, and recordings in seconds.",
   voiceNavigation: "Voice-triggered navigation",
   voiceNavigationDesc:
     "Control the app and access content hands-free, anytime.",
+  productivity: "Productivity On-the-go",
+  productivityDesc: 'Maximize your in-between moments with \n "Hey, Manora!"',
   playFormats: "Play as podcasts, lectures, and quizzes",
   playFormatsDesc:
     "Experience your content in different formats tailored to your learning style and preferences.",
@@ -79,7 +82,7 @@ const ko = {
   getTheApp: "앱 다운로드",
   hitPlayOnLife: "당신의 삶을 재생하세요.",
   heroDescription:
-    "Manora는 강의, 사진, 문서 등의 복잡한 내용을 간단하고 개인화된 오디오 브리핑으로 압축하여 언제든 준비된 상태로 제공합니다.",
+    "당신의 삶을 재생하세요. 간단하고 개인화된 오디오 브리핑을 언제든 들으실 수 있습니다. 기사, 강의, 이메일, 사진 등 다양한 용도로 활용하세요.",
   downloadAppStore: "App Store에서 다운로드",
   getGooglePlay: "Google Play에서 받기",
   freeTrial: "14일 무료 체험 포함 • 언제든 취소 가능",
@@ -93,6 +96,8 @@ const ko = {
     "일일 텍스트, 이메일, 녹음의 간결한 요약을 몇 초 만에 받아보세요.",
   voiceNavigation: "음성 트리거 내비게이션",
   voiceNavigationDesc: "언제든 핸즈프리로 앱을 제어하고 콘텐츠에 액세스하세요.",
+  productivity: "이동 중 생산성",
+  productivityDesc: '짬짬이 시간을 최대한 활용하세요.\n"헤이, 마노라!"',
   playFormats: "팟캐스트, 강의, 퀴즈로 재생",
   playFormatsDesc:
     "학습 스타일과 선호도에 맞춰진 다양한 형식으로 콘텐츠를 경험하세요.",
@@ -162,6 +167,8 @@ const jp = {
   voiceNavigation: "音声トリガーナビゲーション",
   voiceNavigationDesc:
     "いつでもハンズフリーでアプリを制御し、コンテンツにアクセスできます。",
+  productivity: "移動中の生産性",
+  productivityDesc: "スキマ時間を最大限活用しましょう。\n「ヘイ、マノラ！」",
   playFormats: "ポッドキャスト、講義、クイズとして再生",
   playFormatsDesc:
     "学習スタイルと好みに合わせた様々な形式でコンテンツを体験できます。",
@@ -219,6 +226,7 @@ i18n
       ko: { translation: ko },
       jp: { translation: jp },
     },
+    lng: "en", // 기본 언어를 영어로 설정
     fallbackLng: "en",
     debug: false,
     interpolation: {

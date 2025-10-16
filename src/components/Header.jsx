@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { LanguageDropdown } from "./LanguageDropdown";
+import Image from "next/image";
 
 export function Header() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -52,8 +53,8 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-[#0b1020]/80 backdrop-blur-md border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-6 py-4">
+    <header className="sticky top-0 z-50 bg-[#0b1020]/80 backdrop-blur-md border-b border-white/10 sm:h-[70px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
@@ -61,13 +62,19 @@ export function Header() {
               onClick={() => router.push("/")}
               className="text-xl font-bold tracking-tight"
             >
-              Manora
+              <Image
+                src="/images/logo/manora_white.png"
+                width={120}
+                height={40}
+                alt="manora-logo"
+                className="h-8 sm:h-10 w-auto"
+              />
             </button>
           </div>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button
+            {/* <button
               onClick={() => scrollToSection("features")}
               className="text-white/80 hover:text-white transition-colors cursor-pointer"
             >
@@ -90,7 +97,7 @@ export function Header() {
               className="bg-white text-gray-900 px-6 py-2 rounded-2xl font-medium hover:bg-white/90 transition-all hover:-translate-y-0.5 shadow-lg whitespace-nowrap cursor-pointer"
             >
               {translate("getTheApp")}
-            </button>
+            </button> */}
 
             {/* Language Dropdown */}
             <LanguageDropdown />
@@ -109,9 +116,9 @@ export function Header() {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden mt-4 mobile-menu ${showMobileMenu ? "show" : ""}`}
+          className={`md:hidden mt-3 sm:mt-4 mobile-menu ${showMobileMenu ? "show" : ""}`}
         >
-          <div className="bg-[#0b1020]/95 backdrop-blur-md border border-white/10 rounded-xl p-4 space-y-4">
+          <div className="bg-[#0b1020]/95 backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 space-y-3 sm:space-y-4">
             <button
               onClick={() => scrollToSection("features")}
               className="block w-full text-left text-white/80 hover:text-white transition-colors cursor-pointer"
