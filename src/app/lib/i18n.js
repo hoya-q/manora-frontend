@@ -26,14 +26,14 @@ const en = {
   smartFeatures: "Smart features that work while you move.",
   audioNarration: "Audio narration",
   audioNarrationDesc:
-    "Listen to texts, emails, and notes at your own pace, provided to by Manora.",
+    "Listen to texts, emails, and notes at your own pace, provided to you by Manora.",
   autoSummaries: "Auto-summaries",
   autoSummariesDesc:
     "Get concise summaries of your daily texts, emails, and recordings in seconds.",
   voiceNavigation: "Voice-triggered navigation",
   voiceNavigationDesc:
     "Control the app and access content hands-free, anytime.",
-  productivity: "Productivity On-the-go",
+  productivity: "On-the-go Productivity",
   productivityDesc: "Maximize your in-between moments with ",
   Manora: '"Hey, Manora!"',
   playFormats: "Play as podcasts, lectures, and quizzes",
@@ -102,7 +102,8 @@ const ko = {
   maximizeMoments: "'헤이, 마노라!'로 짬짬이 시간을 최대한 활용하세요.",
   smartFeatures: "움직이는 중에도 작동하는 스마트 기능.",
   audioNarration: "오디오 내레이션",
-  audioNarrationDesc: "텍스트, 이메일, 메모를 본인만의 속도로 들어보세요.",
+  audioNarrationDesc:
+    "Manora가 제공하는 텍스트, 이메일, 메모를 여러분의 속도에 맞춰 들어보세요.",
   autoSummaries: "자동 요약",
   autoSummariesDesc:
     "일일 텍스트, 이메일, 녹음의 간결한 요약을 몇 초 만에 받아보세요.",

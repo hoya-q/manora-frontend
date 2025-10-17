@@ -216,8 +216,6 @@ a:focus {
   transform: none !important;
 }
 
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -273,8 +271,6 @@ a:focus {
     --chart-5: 340 75% 55%;
   }
 }
-
-
 
 @layer base {
   * {

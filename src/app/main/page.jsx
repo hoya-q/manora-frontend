@@ -22,11 +22,11 @@ export default function MainPage() {
   // 슬라이드 이미지 데이터
   const slideImages = [
     {
-      src: "/images/hero-demo-light.png",
+      src: "/images/hero-demo-dark.png",
       alt: "Manora Mobile App Demo - Light Mode",
     },
     {
-      src: "/images/hero-demo-dark.png",
+      src: "/images/hero-demo-light.png",
       alt: "Manora Mobile App Demo - Dark Mode",
     },
   ];
