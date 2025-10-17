@@ -184,7 +184,9 @@ export default function Features({ translate }) {
                   }`}
                 >
                   {translate("productivityDesc")}
-                  <span className="font-extrabold">{translate("Manora")}</span>
+                  <span className="font-extrabold text-[#667eea]">
+                    {translate("Manora")}
+                  </span>
                 </p>
               </CardContent>
             </Card>
