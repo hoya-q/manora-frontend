@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { LanguageDropdown } from "./LanguageDropdown";
 import Image from "next/image";
 import { useGetWindowSize } from "../hooks/useGetWindowSize";
+import { Button } from "@/components/ui/button";
 
 export function Header() {
   const router = useRouter();
@@ -27,9 +28,10 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <button
+            <Button
               onClick={() => router.push("/")}
-              className={`font-bold tracking-tight ${
+              variant="ghost"
+              className={`font-bold tracking-tight bg-transparent hover:bg-transparent p-0 h-auto ${
                 screen === "MOBILE" ? "text-lg" : "text-xl"
               }`}
             >
@@ -40,7 +42,7 @@ export function Header() {
                 alt="manora-logo"
                 className={`w-auto ${screen === "MOBILE" ? "h-8" : "h-10"}`}
               />
-            </button>
+            </Button>
           </div>
 
           {/* Language Dropdown - 모든 화면 크기에서 표시 */}

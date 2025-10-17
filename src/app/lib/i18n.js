@@ -15,6 +15,9 @@ const en = {
   Hitplayonyourlife: "Hit play on your life.",
   heroDescription:
     "Listen to a simple and personalized audio brief, ready when you are. For articles, lectures, emails, photos, and more.",
+  heroDescriptionpart1:
+    "Listen to a simple and personalized audio brief, ready when you are. ",
+  heroDescriptionpart2: "For articles, lectures, emails, photos, and more.",
   downloadAppStore: "Download on the App Store",
   getGooglePlay: "Get it on Google Play",
   freeTrial: "14-day free trial included • Cancel anytime.",
@@ -23,7 +26,7 @@ const en = {
   smartFeatures: "Smart features that work while you move.",
   audioNarration: "Audio narration",
   audioNarrationDesc:
-    "Listen to texts, emails, and notes at your own pace, \n provided to by Manora.",
+    "Listen to texts, emails, and notes at your own pace, provided to by Manora.",
   autoSummaries: "Auto-summaries",
   autoSummariesDesc:
     "Get concise summaries of your daily texts, emails, and recordings in seconds.",
@@ -87,10 +90,11 @@ const ko = {
   hitPlayOnLife: "당신의 삶을 재생하세요.",
   hitPlayOnLifePart1: "당신만의 ",
   hitPlayOnLifePart2: "AI 오디오",
-  hitPlayOnLifePart3: " 어시스턴트",
+  hitPlayOnLifePart3: " 비서",
   Hitplayonyourlife: "당신의 삶을 재생하세요.",
-  heroDescription:
-    "간단하고 개인화된 오디오 브리핑을 언제든 들으실 수 있습니다. 기사, 강의, 이메일, 사진 등 다양한 용도로 활용하세요.",
+  heroDescriptionpart1: "지금, 당신의 하루를 재생하세요. \n",
+  heroDescriptionpart2:
+    "기사부터 강의, 이메일, 사진까지 모두 한 번에, \n 필요할 때마다 들려주는 \n 나만을 위한 맞춤형 오디오 브리핑.",
   downloadAppStore: "App Store에서 다운로드",
   getGooglePlay: "Google Play에서 받기",
   freeTrial: "14일 무료 체험 포함 • 언제든 취소 가능",
@@ -165,6 +169,10 @@ const jp = {
   Hitplayonyourlife: "あなたの人生を再生しましょう。",
   heroDescription:
     "シンプルでパーソナライズされたオーディオブリーフィングをいつでも聞くことができます。記事、講義、メール、写真など、様々な用途で活用できます。",
+  heroDescriptionpart1:
+    "シンプルでパーソナライズされたオーディオブリーフィングをいつでも聞くことができます。",
+  heroDescriptionpart2:
+    "記事、講義、メール、写真など、様々な用途で活用できます。",
   downloadAppStore: "App Storeでダウンロード",
   getGooglePlay: "Google Playで入手",
   freeTrial: "14日間無料トライアル付き • いつでもキャンセル可能",

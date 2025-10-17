@@ -1,5 +1,6 @@
 import "./globals.css";
-import { I18nProvider } from "@/src/components/I18nProvider";
+import { I18nProvider } from "@/components/I18nProvider";
+import AOSProvider from "@/components/AOSProvider";
 
 export const metadata = {
   title: "Manora - Hit play on your life",
@@ -23,9 +24,16 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         />
+        {/* AOS CSS */}
+        <link
+          href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+          rel="stylesheet"
+        />
       </head>
       <body>
-        <I18nProvider>{children}</I18nProvider>
+        <I18nProvider>
+          <AOSProvider>{children}</AOSProvider>
+        </I18nProvider>
       </body>
     </html>
   );

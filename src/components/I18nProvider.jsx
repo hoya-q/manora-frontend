@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import i18n from "@/src/app/lib/i18n";
+import i18n from "@/app/lib/i18n";
 
 export function I18nProvider({ children }) {
   useEffect(() => {

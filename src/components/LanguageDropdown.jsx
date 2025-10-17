@@ -71,7 +71,7 @@ export function LanguageDropdown() {
 
       {isClient && (
         <div
-          className={`absolute right-0 top-full mt-2 w-20 bg-[#0b1020]/95 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden shadow-xl language-dropdown-menu ${
+          className={`absolute left-0 top-full mt-2 w-20 bg-[#0b1020]/95 backdrop-blur-md border border-white/10 rounded-xl overflow-hidden shadow-xl language-dropdown-menu ${
             showDropdown ? "show" : ""
           }`}
         >

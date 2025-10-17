@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Header } from "@/src/components/Header";
-import { Footer } from "@/src/components/Footer";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 export default function ContactPage() {
   const { t } = useTranslation();

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { useGetWindowSize } from "../hooks/useGetWindowSize";
+import { Button } from "@/components/ui/button";
 
 export function Footer() {
   const router = useRouter();
@@ -56,26 +57,33 @@ export function Footer() {
         >
           <p className="text-white/60">© ArtygenSpace. All rights reserved.</p>
           <div className="flex space-x-6">
-            <button
+            <Button
               onClick={() => navigateToPage("privacy-terms")}
-              className="text-white/60 hover:text-white transition-colors cursor-pointer"
+              variant="ghost"
+              className="text-white/60 hover:text-white bg-transparent hover:bg-transparent p-0 h-auto"
             >
               {translate("privacyTerms")}
-            </button>
-            <button
+            </Button>
+            <Button
               onClick={() => navigateToPage("contact")}
-              className="text-white/60 hover:text-white transition-colors cursor-pointer"
+              variant="ghost"
+              className="text-white/60 hover:text-white bg-transparent hover:bg-transparent p-0 h-auto"
             >
               {translate("support")}
-            </button>
-            <a
-              href="https://www.artygenspace.com/artygenspace-eng-version"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/60 hover:text-white transition-colors cursor-pointer"
+            </Button>
+            <Button
+              asChild
+              variant="ghost"
+              className="text-white/60 hover:text-white bg-transparent hover:bg-transparent p-0 h-auto"
             >
-              {translate("aboutUs")}
-            </a>
+              <a
+                href="https://www.artygenspace.com/artygenspace-eng-version"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {translate("aboutUs")}
+              </a>
+            </Button>
           </div>
         </div>
       </div>

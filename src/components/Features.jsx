@@ -1,5 +1,6 @@
 import React from "react";
-import { useGetWindowSize } from "@/src/hooks/useGetWindowSize";
+import { useGetWindowSize } from "@/hooks/useGetWindowSize";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Features({ translate }) {
   const { screen, isClient } = useGetWindowSize();
@@ -66,6 +67,8 @@ export default function Features({ translate }) {
       >
         <div
           className={`text-center ${screen === "MOBILE" ? "mb-8" : screen === "TABLET" ? "mb-12" : "mb-16"}`}
+          data-aos="fade-up"
+          data-aos-delay="100"
         >
           <h2
             className={`${responsiveClasses.titleSize} font-bold ${screen === "MOBILE" ? "mb-3" : screen === "TABLET" ? "mb-4" : "mb-6"} tracking-tight`}
@@ -75,108 +78,116 @@ export default function Features({ translate }) {
         </div>
         <div className={responsiveClasses.spacing}>
           {/* 기능 1 - 오디오 내레이션 */}
-          <div className="relative">
-            <div
+          <div className="relative" data-aos="fade-up" data-aos-delay="200">
+            <Card
               className={`bg-white/5 rounded-full border border-white/10 ${responsiveClasses.cardPadding}`}
             >
-              <h3
-                className={`${responsiveClasses.cardTitleSize} font-bold tracking-tight absolute top-[-13%] left-1/2 transform -translate-x-1/2 bg-indigo-500 rounded-full ${
-                  screen === "MOBILE"
-                    ? "px-4 py-1"
-                    : screen === "TABLET"
-                      ? "px-6 py-2"
-                      : "px-8 py-2"
-                }`}
-              >
-                {translate("autoSummaries")}
-              </h3>
-              <p
-                className={`text-white/80 ${responsiveClasses.cardTextSize} leading-relaxed text-center whitespace-pre-line ${
-                  screen === "MOBILE" ? "pt-2" : "pt-4"
-                }`}
-              >
-                {translate("autoSummariesDesc")}
-              </p>
-            </div>
+              <CardContent className="p-0">
+                <h3
+                  className={`${responsiveClasses.cardTitleSize} font-bold tracking-tight absolute top-[-13%] left-1/2 transform -translate-x-1/2 bg-indigo-500 text-white rounded-full ${
+                    screen === "MOBILE"
+                      ? "px-4 py-1"
+                      : screen === "TABLET"
+                        ? "px-6 py-2"
+                        : "px-8 py-2"
+                  }`}
+                >
+                  {translate("autoSummaries")}
+                </h3>
+                <p
+                  className={`text-white/80 ${responsiveClasses.cardTextSize} font-medium leading-relaxed text-center whitespace-pre-line ${
+                    screen === "MOBILE" ? "pt-2" : "pt-4"
+                  }`}
+                >
+                  {translate("autoSummariesDesc")}
+                </p>
+              </CardContent>
+            </Card>
           </div>
 
           {/* 기능 2 - 자동 요약 */}
-          <div className="relative">
-            <div
+          <div className="relative" data-aos="fade-up" data-aos-delay="300">
+            <Card
               className={`bg-white/5 rounded-full border border-white/10 ${responsiveClasses.cardPadding}`}
             >
-              <h3
-                className={`${responsiveClasses.cardTitleSize} font-bold tracking-tight absolute top-[-13%] left-1/2 transform -translate-x-1/2 bg-indigo-500 rounded-full ${
-                  screen === "MOBILE"
-                    ? "px-4 py-1"
-                    : screen === "TABLET"
-                      ? "px-6 py-2"
-                      : "px-8 py-2"
-                }`}
-              >
-                {translate("voiceNavigation")}
-              </h3>
-              <p
-                className={`text-white/80 ${responsiveClasses.cardTextSize} leading-relaxed text-center whitespace-pre-line ${
-                  screen === "MOBILE" ? "pt-2" : "pt-4"
-                }`}
-              >
-                {translate("voiceNavigationDesc")}
-              </p>
-            </div>
+              <CardContent className="p-0">
+                <h3
+                  className={`${responsiveClasses.cardTitleSize} font-bold tracking-tight absolute top-[-13%] left-1/2 transform -translate-x-1/2 bg-indigo-500 text-white rounded-full ${
+                    screen === "MOBILE"
+                      ? "px-4 py-1"
+                      : screen === "TABLET"
+                        ? "px-6 py-2"
+                        : "px-8 py-2"
+                  }`}
+                >
+                  {translate("voiceNavigation")}
+                </h3>
+                <p
+                  className={`text-white/80 ${responsiveClasses.cardTextSize} font-medium leading-relaxed text-center whitespace-pre-line ${
+                    screen === "MOBILE" ? "pt-2" : "pt-4"
+                  }`}
+                >
+                  {translate("voiceNavigationDesc")}
+                </p>
+              </CardContent>
+            </Card>
           </div>
 
           {/* 기능 3 - 음성 트리거 내비게이션 */}
-          <div className="relative">
-            <div
+          <div className="relative" data-aos="fade-up" data-aos-delay="400">
+            <Card
               className={`bg-white/5 rounded-full border border-white/10 ${responsiveClasses.cardPadding}`}
             >
-              <h3
-                className={`${responsiveClasses.cardTitleSize} font-bold tracking-tight absolute top-[-13%] left-1/2 transform -translate-x-1/2 bg-indigo-500 rounded-full ${
-                  screen === "MOBILE"
-                    ? "px-4 py-1"
-                    : screen === "TABLET"
-                      ? "px-6 py-2"
-                      : "px-8 py-2"
-                }`}
-              >
-                {translate("audioNarration")}
-              </h3>
-              <p
-                className={`text-white/80 ${responsiveClasses.cardTextSize} leading-relaxed text-center whitespace-pre-line ${
-                  screen === "MOBILE" ? "pt-2" : "pt-4"
-                }`}
-              >
-                {translate("audioNarrationDesc")}
-              </p>
-            </div>
+              <CardContent className="p-0">
+                <h3
+                  className={`${responsiveClasses.cardTitleSize} font-bold tracking-tight absolute top-[-13%] left-1/2 transform -translate-x-1/2 bg-indigo-500 text-white rounded-full ${
+                    screen === "MOBILE"
+                      ? "px-4 py-1"
+                      : screen === "TABLET"
+                        ? "px-6 py-2"
+                        : "px-8 py-2"
+                  }`}
+                >
+                  {translate("audioNarration")}
+                </h3>
+                <p
+                  className={`text-white/80 ${responsiveClasses.cardTextSize} font-medium leading-relaxed text-center whitespace-pre-line ${
+                    screen === "MOBILE" ? "pt-2" : "pt-4"
+                  }`}
+                >
+                  {translate("audioNarrationDesc")}
+                </p>
+              </CardContent>
+            </Card>
           </div>
 
           {/* 기능 4 */}
-          <div className="relative">
-            <div
+          <div className="relative" data-aos="fade-up" data-aos-delay="500">
+            <Card
               className={`bg-white/5 rounded-full border border-white/10 ${responsiveClasses.cardPadding}`}
             >
-              <h3
-                className={`${responsiveClasses.cardTitleSize} font-bold tracking-tight absolute top-[-13%] left-1/2 transform -translate-x-1/2 bg-indigo-500 rounded-full ${
-                  screen === "MOBILE"
-                    ? "px-4 py-1"
-                    : screen === "TABLET"
-                      ? "px-6 py-2"
-                      : "px-8 py-2"
-                }`}
-              >
-                {translate("productivity")}
-              </h3>
-              <p
-                className={`text-white/80 ${responsiveClasses.cardTextSize} leading-relaxed text-center whitespace-pre-line ${
-                  screen === "MOBILE" ? "pt-2" : "pt-4"
-                }`}
-              >
-                {translate("productivityDesc")}
-                <span className="font-extrabold">{translate("Manora")}</span>
-              </p>
-            </div>
+              <CardContent className="p-0">
+                <h3
+                  className={`${responsiveClasses.cardTitleSize} font-bold tracking-tight absolute top-[-13%] left-1/2 transform -translate-x-1/2 bg-indigo-500 text-white rounded-full ${
+                    screen === "MOBILE"
+                      ? "px-4 py-1"
+                      : screen === "TABLET"
+                        ? "px-6 py-2"
+                        : "px-8 py-2"
+                  }`}
+                >
+                  {translate("productivity")}
+                </h3>
+                <p
+                  className={`text-white/80 ${responsiveClasses.cardTextSize} leading-relaxed text-center whitespace-pre-line ${
+                    screen === "MOBILE" ? "pt-2" : "pt-4"
+                  }`}
+                >
+                  {translate("productivityDesc")}
+                  <span className="font-extrabold">{translate("Manora")}</span>
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
